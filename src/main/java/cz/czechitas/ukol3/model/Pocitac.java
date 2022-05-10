@@ -6,6 +6,28 @@ public class Pocitac {
     private Pamet ram;
     private Disk pevnyDisk;
 
+    public void vytvorSouborOVelikosti(long velikost) {
+
+        if (!jeZapnuty) {
+            System.err.println("Nelze vytvořit soubor. Počítač je vypnutý");
+        } else if (pevnyDisk.getVyuziteMisto() > pevnyDisk.getKapacita()) {
+            System.err.println("Nedostatek místa na disku.");
+        } else {pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() + velikost);
+            System.out.println("Soubor o velikosti " + velikost + " bytů byl vytvořen.");
+        }
+    }
+
+    public void vymazSouboryOVelikosti(long velikost) {
+        if (!jeZapnuty) {
+            System.err.println("Nelze vymazat soubor. Počítač je vypnutý");
+        } else if (pevnyDisk.getVyuziteMisto() < 0) {
+            System.err.println("Nelze najít soubor.");
+        } else {
+            pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);
+            System.out.println("Soubor o velikosti " + velikost + " bytů byl vymazán");
+        }
+    }
+
     public boolean jeZapnuty() {
         return jeZapnuty;
     }
