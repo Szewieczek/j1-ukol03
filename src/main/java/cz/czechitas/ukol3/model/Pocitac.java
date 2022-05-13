@@ -10,7 +10,7 @@ public class Pocitac {
 
         if (!jeZapnuty) {
             System.err.println("Nelze vytvořit soubor. Počítač je vypnutý");
-        } else if (pevnyDisk.getVyuziteMisto() > pevnyDisk.getKapacita()) {
+        } else if (pevnyDisk.getVyuziteMisto() + velikost > pevnyDisk.getKapacita()) {
             System.err.println("Nedostatek místa na disku.");
         } else {pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() + velikost);
             System.out.println("Soubor o velikosti " + velikost + " bytů byl vytvořen.");
@@ -20,7 +20,7 @@ public class Pocitac {
     public void vymazSouboryOVelikosti(long velikost) {
         if (!jeZapnuty) {
             System.err.println("Nelze vymazat soubor. Počítač je vypnutý");
-        } else if (pevnyDisk.getVyuziteMisto() < 0) {
+        } else if (pevnyDisk.getVyuziteMisto() - velikost < 0) {
             System.err.println("Nelze najít soubor.");
         } else {
             pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);

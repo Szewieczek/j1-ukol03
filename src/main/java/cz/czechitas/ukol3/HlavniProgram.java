@@ -8,7 +8,7 @@ import cz.czechitas.ukol3.model.*;
 public class HlavniProgram {
 
     public static void main(String... args) {
-        //TODO tady bude váš kód - vytvoření instance třídy Pocitac, zapnutí, vypnutí, výpis hodnot.
+        //tady bude váš kód - vytvoření instance třídy Pocitac, zapnutí, vypnutí, výpis hodnot.
         System.out.println("Program spuštěn.");
 
         Pocitac mujPocitac = new Pocitac();
@@ -32,12 +32,13 @@ public class HlavniProgram {
 
         //mujPocitac.vypniSe();
 
-        mujPocitac.vytvorSouborOVelikosti(512_000_000_000L);
+        mujPocitac.vytvorSouborOVelikosti(262_000_000_000L);
+        mujPocitac.vytvorSouborOVelikosti(262_000_000_000L);
         mujPocitac.vytvorSouborOVelikosti(2_000_000_000L);
 
         System.out.println(mujPocitac);
 
-        mujPocitac.vymazSouboryOVelikosti(512_000_000_000L);
+        mujPocitac.vymazSouboryOVelikosti(562_000_000_000L);
 
         mujPocitac.vypniSe();
     }
